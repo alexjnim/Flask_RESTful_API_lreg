@@ -24,7 +24,7 @@ When getting predictions, use the following format for the JSON data entry.
 ```
 
 
-### API details
+# API details
 The following classes can be found in the resources folder:
 - add_data.py - this allows you to add data to the database
 - create_tables.py - this will create a database to store the training data and username & passwords if one does not exist already
