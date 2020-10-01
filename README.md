@@ -13,6 +13,7 @@ The following classes can be found in the resources folder:
 
 Prediction: use the following format for the JSON data
 ```
-{"input_data":[{"fields":["age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal"],
-                                  "values":[[1,1,1,1,0,5,1231,1,1,1,1,1,1]]}]}
+{"input_data":[{"fields":["age","sex","cp","trestbps","chol",
+"fbs","restecg","thalach","exang","oldpeak","slope","ca","thal"],
+"values":[[1,1,1,1,0,5,1231,1,1,1,1,1,1]]}]}
 ```
