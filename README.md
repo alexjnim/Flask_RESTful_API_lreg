@@ -1,6 +1,10 @@
-# FLASK_RESTFUL_API_LIN_REG
+# FLASK RESTFUL API Simple Linear Regression
 
-Here contains code for a Restful API built using the Flask_Restful extension to Flask. 
+Here contains code for a Restful API built using the Flask_Restful extension to Flask. This will include the following features:
+- Building a simple Linear Regression model
+- User authentication for certain requests
+- Add or delete users
+- Make predictions with the linear regression model
 
 ## Instructions
 
