@@ -4,7 +4,7 @@ Here contains code for a Restful API built using the Flask_Restful extension to 
 
 ## Instructions
 
-Upload this repository to Heroku to have an API on a server. Alternatively, download this repository and use the following command on your terminal in the same directory:
+Deploy the contents of this repository to Heroku to have an API on a server. Alternatively, download this repository and use the following command on your terminal in the same directory:
 
 ```
 python app.py
@@ -26,10 +26,17 @@ When getting predictions, use the following format for the JSON data entry.
 
 # API details
 The following classes can be found in the resources folder:
-- add_data.py - this allows you to add data to the database
-- create_tables.py - this will create a database to store the training data and username & passwords if one does not exist already
-- db.py - this initiates the Flask_SLQAlchemy connection
-- predict.py - this will allow you to send JSON data and retrieve a prediction from the lin reg model
-- security.py - this will authenticate the user to provide a JSON web token (JWT)
-- train.py - this will train the model or retrain the model with new data
-- user.py - this will find, get and delete users from the database
+- add_data.py : this allows you to add data to the database
+- create_tables.py : this will create a database to store the training data and username & passwords if one does not exist already
+- db.py : this initiates the Flask_SLQAlchemy connection
+- predict.py : this will allow you to send JSON data and retrieve a prediction from the lin reg model
+- security.py : this will authenticate the user to provide a JSON web token (JWT)
+- train.py : this will train the model or retrain the model with new data
+- user.py : this will find, get and delete users from the database
+
+# Heroku files
+The following files were written for the purpose of deploying the API on Heroku's server. 
+- requirements.txt : this contains all the python libraries that need to be installed in order to run the app
+- uwsgi.ini : Heroku does not provide a web server of its own. Instead, it expects the application to start its own web server on the port number given in the environment variable $PORT. Since the Flask development web server is not robust enough to use for production, I'm using [uwsgi](https://uwsgi-docs.readthedocs.io/en/latest/) here. 
+- runtime.txt : this tells Heroku the version of Python you are using
+- Procfile : this will give instructions to Heroku to run the app using uwsgi
