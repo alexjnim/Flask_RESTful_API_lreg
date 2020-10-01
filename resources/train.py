@@ -20,13 +20,15 @@ def train_new_model():
     cur = connection.cursor()
 
     df_data_1 = pd.read_sql_query("SELECT * from heart", connection)
-    
+
     # Be sure to close the connection
     connection.close()
 
-    X_train = df_data_1.drop(columns = ['target'])
+    X_train = df_data_1.drop(columns = ['target', 'index'])
     y_train = df_data_1['target']
 
+    print(X_train)
+    
     # build pipeline (should be load pipeline here)
     reg = LinearRegression()
 
