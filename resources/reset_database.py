@@ -8,6 +8,8 @@ import pandas as pd
 from flask import Flask
 from flask_restful import Api, Resource
 from flask_jwt import JWT, jwt_required
+
+
 from werkzeug.utils import secure_filename
 
 class ResetDatabase(Resource):
@@ -24,7 +26,7 @@ class ResetDatabase(Resource):
         connection.commit()
         connection.close()
 
-        #here data in the uploads folder is deleted, so data has to be uploaded again to be added to the database 
+        #here data in the uploads folder is deleted, so data has to be uploaded again to be added to the database
         uploads_path = 'data/uploads/'
         onlyfiles = [f for f in listdir(uploads_path) if isfile(join(uploads_path, f))]
 
@@ -33,4 +35,4 @@ class ResetDatabase(Resource):
 
 
 
-        return {'message' : 'the data has been reset to the original. Please reupload the data to add to the database (the users for authentication remain the same)'}
+        return {'message' : 'The data has been reset to the original. Please reupload any data that needs to be added to the database. (The users for authentication have not been deleted)'}
