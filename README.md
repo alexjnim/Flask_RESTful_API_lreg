@@ -5,6 +5,8 @@ Here contains code for a Restful API built using the Flask_Restful extension to 
 - User authentication for certain requests
 - Add or delete users
 - Make predictions with the linear regression model
+- Add more data to the database (and retrain if necessary)
+- Reset the database with original data entries 
 
 ## Instructions
 
