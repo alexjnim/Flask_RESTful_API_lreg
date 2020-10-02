@@ -11,6 +11,7 @@ from resources.user import UserRegister, UserAccounts
 from resources.predict import MakePrediction
 from resources.train import Train
 from resources.add_data import AddCSV
+from resources.reset_database import ResetDatabase
 
 # +
 app = Flask(__name__)
@@ -27,6 +28,7 @@ api.add_resource(Train, '/train')
 api.add_resource(UserRegister, '/register')
 api.add_resource(UserAccounts, '/accounts')
 api.add_resource(AddCSV, '/add_csv')
+api.add_resource(ResetDatabase, '/reset_database' )
 # -
 
 if __name__ == '__main__':

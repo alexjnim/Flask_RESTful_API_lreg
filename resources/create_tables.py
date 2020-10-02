@@ -12,21 +12,11 @@ cursor = connection.cursor()
 # This is the only place where int vs INTEGER matters—in auto-incrementing columns
 create_table = "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username text, password text)"
 cursor.execute(create_table)
-
 query = "INSERT INTO users VALUES (NULL, ?, ?)"
 cursor.execute(query, ("test", "password"))
 
 data = pd.read_csv('data/heart.csv')
-
 data.to_sql("heart", connection, if_exists="replace")
-
-# cursor.execute("CREATE TABLE IF NOT EXISTS heart (age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal, target)") # use your column names here
-#
-# with open('data/heart.csv','r') as fin:
-#     dr = csv.DictReader(fin) # comma is default delimiter
-#     to_db = [(i['age'], i['sex'], i['cp'], i['trestbps'], i['chol'], i['fbs'], i['restecg'], i['thalach'], i['exang'], i['oldpeak'], i['slope'], i['ca'], i['thal'], i['target'],) for i in dr]
-#
-# cursor.executemany("INSERT INTO heart (age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal, target) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", to_db)
 
 connection.commit()
 

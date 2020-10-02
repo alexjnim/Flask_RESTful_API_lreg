@@ -31,3 +31,9 @@ class AddCSV(Resource):
             connection.close()
 
         return {'message': 'successful uploaded ' + filename + ' to the database. please proceed to retrain the model if necessary'}
+
+
+class GetData(Resource):
+    @jwt_required()
+    def get(self):
+        return  
